@@ -1,0 +1,6 @@
+*.DS_Store
+*.yy.c
+*.tab.c
+*.tab.h
+calc1
+calc2
