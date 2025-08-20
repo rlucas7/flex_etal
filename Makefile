@@ -8,7 +8,7 @@
 .PHONY: clean
 
 clean:
-	rm calc1 calc2 wc
+	rm calc1 calc2 wc html_tags
 
 # calc1
 # A simple adder calculator which
