@@ -9,6 +9,7 @@ Currently available make targets:
 clean     # rm of end built target
 calc1     # simple addition calculator
 calc2     # more sophisticated calculator-handles division etc al
+calc3     # a mini program language, contains control-flow and while loop
 wc        # this is a copy of the wc cli tool but made with lex
 html_tags # this will grab each html token in an html doc
 ```

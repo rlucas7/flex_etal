@@ -8,7 +8,7 @@
 .PHONY: clean
 
 clean:
-	rm calc1 calc2 wc html_tags
+	rm calc1 calc2 wc html_tags calc3a calc3b calc3g calc3.yy.o calc3parser.tab.o
 
 # calc1
 # A simple adder calculator which
@@ -51,14 +51,17 @@ calc3.yy.c: calc3.l
 calc3parser.tab.c: calc3.y
 	yacc -t -b calc3parser -dy calc3.y
 
+# calc3a is the interpreter, calc3b is the compiler, calc3c
+# generates the graph.
+# Note the compiler converts the C code to assembly code
+# which might need some additional massaging to actually
+# compile in an assembler
+
 calc3: calc3.yy.c calc3parser.tab.c
-	gcc calc3.yy.c calc3parser.tab.c -o calc3 -ll
-
-#gcc -c y.tab.c lex.yy.c
-#gcc y.tab.o lex.yy.o calc3a.c -o calc3a.exe
-#gcc y.tab.o lex.yy.o calc3b.c -o calc3b.exe
-#gcc y.tab.o lex.yy.o calc3g.c -o calc3g.exe
-
+	gcc calc3.yy.c calc3parser.tab.c -c
+	gcc calc3.yy.o calc3parser.tab.o  calc3a.c -o calc3a
+	gcc calc3.yy.o calc3parser.tab.o  calc3b.c -o calc3b
+	gcc calc3.yy.o calc3parser.tab.o  calc3g.c -o calc3g
 
 # a clone of the `wc` command which counts characters
 # words and newlines either using `stdin` or the
