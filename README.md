@@ -1,5 +1,8 @@
 This repo houses a bunch of miscellaneous
-`lex | yacc` scripts and tools.
+`lex | yacc` scripts and tools. 
+The repo is mostly a collection of reference and study materials 
+for people interested in programming languages, compilers, and the 
+constituent tool parts that are used in constructing compilers.
 
 To build any, use the Make targets
 
